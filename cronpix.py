@@ -11,6 +11,8 @@ from time import sleep
 from typing import List
 
 
+duration = 60
+
 w = (225, 225, 225)
 g = (150, 150, 150)
 _ = (0, 0, 0)
@@ -382,17 +384,17 @@ sense.set_rotation(args.rotate)
 
 if image_name in images:
     image = images[image_name]
-    if len(image) == 1:
+    frame_count = len(image)
+    if frame_count == 1:
         sense.set_pixels(dim(image[0], brightness))
     else:
-        for loop in range(1, 10):
+        for loop in range(1, math.floor(duration / (0.7 + (frame_count * 0.3)))):
             for frame in image:
                 sense.set_pixels(dim(frame, brightness))
                 sleep(0.3)
             sleep(0.7)
 
     if not args.keep:
-        sleep(30)
         sense.clear()
 else:
     raise Exception(f'Invalid image {image_name} requested')
