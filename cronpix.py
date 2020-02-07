@@ -11,16 +11,16 @@ from time import sleep
 from typing import List
 
 
-duration = 60
-
 w = (225, 225, 225)
 g = (150, 150, 150)
+G = (100, 100, 100)
 _ = (0, 0, 0)
 c = (60, 150, 240)
 l = (40, 97, 240)
 b = (0, 0, 255)
 d = (0, 0, 140)
 p = (180, 115, 75)
+P = (160, 100, 70)
 
 images = {
     # 8x8
@@ -327,6 +327,219 @@ images = {
             _, _, _, _, _, _, _, _,
         ]
     ],
+    'eye': [
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            P, _, _, _, _, _, _, P,
+            _, P, _, _, _, _, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            P, _, _, _, _, _, _, P,
+            _, P, P, P, P, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            P, P, P, P, P, P, P, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, P, P, P, P, _, _,
+            P, P, b, _, _, b, P, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, P, P, P, P, _, _,
+            _, P, G, b, b, G, P, _,
+            P, P, b, _, _, b, P, P,
+            _, P, G, b, b, G, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        # [
+        #     _, _, P, P, P, P, _, _,
+        #     _, P, P, G, G, P, P, _,
+        #     _, P, G, b, b, G, P, _,
+        #     P, G, b, _, _, b, G, P,
+        #     _, P, G, b, b, G, P, _,
+        #     _, P, P, G, G, P, P, _,
+        #     _, _, P, P, P, P, _, _,
+        #     _, _, _, _, _, _, _, _,
+        # ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, G, b, b, G, G, P,
+            G, G, b, _, _, b, G, G,
+            P, G, G, b, b, G, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, b, b, G, G, G, P,
+            G, b, _, _, b, G, G, G,
+            P, G, b, b, G, G, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, b, b, G, G, G, G, P,
+            b, _, _, b, G, G, G, G,
+            P, b, b, G, G, G, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, b, b, G, G, G, P,
+            G, b, _, _, b, G, G, G,
+            P, G, b, b, G, G, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, G, b, b, G, G, P,
+            G, G, b, _, _, b, G, G,
+            P, G, G, b, b, G, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, G, G, b, b, G, P,
+            G, G, G, b, _, _, b, G,
+            P, G, G, G, b, b, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, G, G, G, b, b, P,
+            G, G, G, G, b, _, _, b,
+            P, G, G, G, G, b, b, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, G, G, b, b, G, P,
+            G, G, G, b, _, _, b, G,
+            P, G, G, G, b, b, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, P, P, P, P, _, _,
+            _, P, P, G, G, P, P, _,
+            P, G, G, b, b, G, G, P,
+            G, G, b, _, _, b, G, G,
+            P, G, G, b, b, G, G, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, P, P, P, P, _, _,
+            _, P, G, b, b, G, P, _,
+            P, P, b, _, _, b, P, P,
+            _, P, G, b, b, G, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, P, P, P, P, _, _,
+            P, P, b, _, _, b, P, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            P, P, P, P, P, P, P, P,
+            _, P, P, G, G, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            P, _, _, _, _, _, _, P,
+            _, P, P, P, P, P, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            P, _, _, _, _, _, _, P,
+            _, P, _, _, _, _, P, _,
+            _, _, P, P, P, P, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ],
+        [
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+            _, _, _, _, _, _, _, _,
+        ]
+    ],
+
     # For ease of copying:
     'blank': [
         [
@@ -356,6 +569,7 @@ def parse_cli_args() -> argparse.Namespace:
     parser.add_argument('image', help='image to display')
     parser.add_argument('--sim', required=False, help='Use the SenseHat simulator', action='store_true')
     parser.add_argument('--rotate', required=False, help='Set screen rotation', action='store', default=0, type=int)
+    parser.add_argument('--duration', required=False, help='Duration in seconds', action='store', default=60, type=int)
     parser.add_argument('--keep', required=False, help='Don\'t clear screen', action='store_true')
     args = parser.parse_args()
     return args
@@ -381,12 +595,14 @@ print(f'Requested {image_name} in {target}')
 
 sense = SenseHat()
 sense.set_rotation(args.rotate)
+duration = args.duration
 
 if image_name in images:
     image = images[image_name]
     frame_count = len(image)
     if frame_count == 1:
         sense.set_pixels(dim(image[0], brightness))
+        sleep(duration)
     else:
         for loop in range(1, math.floor(duration / (0.7 + (frame_count * 0.3)))):
             for frame in image:
