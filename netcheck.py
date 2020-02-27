@@ -1,5 +1,6 @@
 import socket
 import random
+import sys
 from sense_hat import SenseHat
 from time import sleep
 
@@ -47,6 +48,7 @@ def drawPending(c):
     sense.set_pixels(logo)
 
 
+quiet = '-q' in sys.argv
 displayColor = gray
 while True:
     target = random.choice(targets)
@@ -61,6 +63,7 @@ while True:
 
     displayColor = green if statusOk else red
     drawLogo(displayColor)
-    print(target[0], end=" ")
-    print('.' if statusOk else 'x')
+    if not quiet:
+        print(target[0], end=" ")
+        print('.' if statusOk else 'x')
     sleep(60)
