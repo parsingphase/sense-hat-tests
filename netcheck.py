@@ -1,6 +1,7 @@
 import socket
 import random
 import sys
+import signal
 from sense_hat import SenseHat
 from time import sleep
 
@@ -48,8 +49,17 @@ def drawPending(c):
     sense.set_pixels(logo)
 
 
+def signalHandler(sig, frame):
+    sense.clear()
+    print('Shutting down netcheck.py')
+    exit(0)
+
+
 quiet = '-q' in sys.argv
 displayColor = gray
+
+signal.signal(signal.SIGINT, signalHandler)
+
 while True:
     target = random.choice(targets)
     sense.clear()
